@@ -17,7 +17,7 @@ public struct Ed25519HDKey {
     public static func getMasterKeyFromSeed(_ seed: Hex) -> Result<Keys, Error> {
         let hmacKey = ed25519Curve.bytes
 
-        guard let entropy = hmacSha512(message: Data(hex: seed), key: Data(hmacKey)) else {
+        guard let entropy = hmacSha512(message: Data(hexString: seed), key: Data(hmacKey)) else {
             return .failure(.hmacCanNotAuthenticate)
         }
         let IL = Data(entropy[0..<32])

@@ -81,7 +81,7 @@ public struct RIPEMD {
 
     // Returns a string representation of a hexadecimal number
     public static func digest (_ input: Data, bitlength: Int = 160) -> String {
-        return digest(input, bitlength: bitlength).toHexString()
+        return digest(input, bitlength: bitlength).toHex()
     }
 
     // Takes a string representation of a hexadecimal number
@@ -94,7 +94,7 @@ public struct RIPEMD {
     // string represenation of the resulting 160 bit hash.
     public static func hexStringDigest (_ input: String, bitlength: Int = 160) -> String {
         let digest: Data = hexStringDigest(input, bitlength: bitlength)
-        return digest.toHexString()
+        return digest.toHex()
     }
 
     // Takes an ASCII string
@@ -112,7 +112,7 @@ public struct RIPEMD {
 //     Takes an ASCII string and returns a hex string represenation of the
 //     resulting 160 bit hash.
     public static func asciiDigest (_ input: String, bitlength: Int = 160) -> String {
-        return asciiDigest(input, bitlength: bitlength).toHexString()
+        return asciiDigest(input, bitlength: bitlength).toHex()
     }
 
 }

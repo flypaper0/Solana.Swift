@@ -14,7 +14,7 @@ extension Array {
 }
 
 extension Array where Element == UInt8 {
-  init(hex: String) {
+  init(hexString hex: String) {
     self.init(reserveCapacity: hex.unicodeScalars.lazy.underestimatedCount)
     var buffer: UInt8?
     var skip = hex.hasPrefix("0x") ? 2 : 0
@@ -52,7 +52,7 @@ extension Array where Element == UInt8 {
     }
   }
 
-  func toHexString() -> String {
+  func toHex() -> String {
     `lazy`.reduce(into: "") {
       var s = String($1, radix: 16)
       if s.count == 1 {

@@ -11,11 +11,11 @@ extension Data {
 }
 
 extension Data {
-    init(hex: String) {
-        self.init([UInt8](hex: hex))
+    init(hexString hex: String) {
+        self.init([UInt8](hexString: hex))
     }
 
-    func toHexString() -> String {
-        self.bytes.toHexString()
+    func toHex() -> String {
+        self.bytes.toHex()
     }
 }

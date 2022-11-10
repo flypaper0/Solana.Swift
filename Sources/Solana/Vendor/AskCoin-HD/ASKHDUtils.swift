@@ -73,7 +73,7 @@ extension Data {
         return RIPEMD.digest(sha256(data: self))
 	}
 	func ask_BTCHash160String() -> String {
-		return ask_BTCHash160().toHexString()
+		return ask_BTCHash160().toHex()
 	}
 	func ck_reversedData() -> Data {
 		return Data(reversed())

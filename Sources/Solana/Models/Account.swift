@@ -47,7 +47,7 @@ public struct HotAccount: Codable, Hashable, Account {
             self.publicKey = newKey
             self.secretKey = keyPair.secretKey
         default:
-            guard let keys = try? Ed25519HDKey.derivePath(derivablePath.rawValue, seed: mnemonic.seed.toHexString()).get() else {
+            guard let keys = try? Ed25519HDKey.derivePath(derivablePath.rawValue, seed: mnemonic.seed.toHex()).get() else {
                 return nil
             }
 
